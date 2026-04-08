@@ -6,6 +6,7 @@ export default function Layout() {
   return (
     <div>
       <nav className="navbar-container">
+        
         {/* Left Links */}
         <div className="nav-left">
           <Link to="/" className="nav-link">Portfolio</Link>
@@ -24,6 +25,7 @@ export default function Layout() {
           <Link to="/about" className="nav-link">About</Link>
           <Link to="/inquire" className="nav-link">Inquire</Link>
         </div>
+
       </nav>
 
       <main>

@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import '../App.css';
 import { Container } from 'react-bootstrap';
+import PortfolioFilter from '../components/PortfolioFilter';
+import Lightbox from '../components/Lightbox';
+import PortfolioGrid from '../components/PortfolioGrid';
+import PortfolioItem from '../components/PortfolioItem';  
 
 // IMPORT IMAGES
 import p1 from '../assets/p1.jpg';
@@ -73,42 +77,8 @@ export default function PortfolioPage() {
   );
 }
 
-/* ===== COMPONENTS BELOW ===== */
 
-function PortfolioFilter({ setCategory }) {
-  return (
-    <div className="portfolio-filters">
-      <button onClick={() => setCategory('all')}>All</button>
-      <button onClick={() => setCategory('portraits')}>Portraits</button>
-      <button onClick={() => setCategory('events')}>Events</button>
-      <button onClick={() => setCategory('travel')}>Travel</button>
-    </div>
-  );
-}
 
-function PortfolioGrid({ images, onClick }) {
-  return (
-    <div className="portfolio-grid">
-      {images.map((img, index) => (
-        <PortfolioItem key={index} img={img} onClick={onClick} />
-      ))}
-    </div>
-  );
-}
 
-function PortfolioItem({ img, onClick }) {
-  return (
-    <div className="portfolio-item" onClick={() => onClick(img.src)}>
-      <img src={img.src} alt="portfolio" />
-    </div>
-  );
-}
 
-function Lightbox({ img, onClose }) {
-  return (
-    <div className="lightbox" onClick={onClose}>
-      <span className="lightbox-close">&times;</span>
-      <img src={img} alt="fullscreen" className="lightbox-img" />
-    </div>
-  );
-}
+
