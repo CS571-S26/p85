@@ -4,6 +4,18 @@ import vanImg from '../assets/van.jpg';
 
 import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 
+/* NEW COMPONENT */
+function AboutPerson({ image, name, tagline, children }) {
+  return (
+    <div className="about-person text-center">
+      <Image src={image} rounded fluid className="mb-3" />
+      <h3>{name}</h3>
+      <p className="tagline">{tagline}</p>
+      {children}
+    </div>
+  );
+}
+
 export default function About() {
   return (
     <div className="about-page">
@@ -34,11 +46,11 @@ export default function About() {
             
             {/* YOU */}
             <Col md={6}>
-              <div className="about-person text-center">
-                <Image src={vanImg} rounded fluid className="mb-3" />
-                <h3>Van Tran</h3>
-                <p className="tagline">Portrait & Event Photographer</p>
-
+              <AboutPerson
+                image={vanImg}
+                name="Van Tran"
+                tagline="Portrait & Event Photographer"
+              >
                 <p>
                   I specialize in portrait and event photography, focusing on capturing 
                   real, natural moments that feel authentic. I primarily shoot in 
@@ -50,16 +62,16 @@ export default function About() {
                   and continues to be a way for me to explore creativity, whether I’m 
                   working with clients or capturing moments while traveling.
                 </p>
-              </div>
+              </AboutPerson>
             </Col>
 
             {/* SISTER */}
             <Col md={6}>
-              <div className="about-person text-center">
-                <Image src="/sister-photo.jpg" rounded fluid className="mb-3" />
-                <h3>My Tran</h3>
-                <p className="tagline">Artist & Illustrator</p>
-
+              <AboutPerson
+                image="/sister-photo.jpg"
+                name="My Tran"
+                tagline="Artist & Illustrator"
+              >
                 <p>
                   My is a visual artist who loves expressing ideas through various mediums like drawing, painting, and digital art.
                   Her work adds a creative and artistic dimension 
@@ -70,7 +82,7 @@ export default function About() {
                   She enjoys experimenting with different styles and mediums, creating 
                   pieces that are personal, expressive, and unique.
                 </p>
-              </div>
+              </AboutPerson>
             </Col>
 
           </Row>

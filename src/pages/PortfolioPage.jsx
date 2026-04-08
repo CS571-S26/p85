@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import PortfolioFilter from '../components/PortfolioFilter';
 import Lightbox from '../components/Lightbox';
 import PortfolioGrid from '../components/PortfolioGrid';
-import PortfolioItem from '../components/PortfolioItem';  
+import PortfolioItem from '../components/PortfolioItem';
 
 // IMPORT IMAGES
 import p1 from '../assets/p1.jpg';
