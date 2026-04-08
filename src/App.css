@@ -1,0 +1,370 @@
+/* Navbar Styling */
+.navbar-container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: #ffffff; /* clean white */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Left and right nav links */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Center logo */
+.nav-center {
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Logo styling */
+.logo {
+  font-family: 'Playfair Display', serif; /* elegant serif font */
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #222;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  color: #007bff;
+}
+
+/* Nav link styling */
+.nav-link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* Hover underline effect */
+.nav-link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #007bff;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Optional: active link styling if using NavLink from react-router-dom */
+.nav-link.active {
+  color: #007bff;
+}
+
+/* Logo image styling */
+.logo-img {
+  height: 50px;      /* maximum height */
+  max-width: 150px;  /* prevents it from being too wide */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;    /* center horizontally */
+  transition: transform 0.2s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Add spacing below navbar for content */
+main {
+  padding-top: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+/* GLOBAL FONT SYSTEM */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #2c2c2c;
+  background-color: #ffffff;
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+  color: #1a1a1a;
+}
+
+/* HERO */
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(85%);
+}
+
+/* INTRO */
+.about-content {
+  max-width: 700px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  line-height: 1.7;
+  color: #555;
+}
+
+/* TEAM SECTION */
+.about-team {
+  max-width: 1100px;
+  margin: 5rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+/* PERSON CARD */
+.about-person {
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-person:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.about-person img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.about-person h3 {
+  font-size: 1.4rem;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.about-person p {
+  line-height: 1.6;
+  color: #555;
+}
+
+/* SOCIAL */
+.about-social {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+.social-links a::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  background: #333;
+  transition: 0.3s;
+}
+
+.social-links a:hover::after {
+  width: 100%;
+}
+
+/* CTA */
+.about-cta {
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: #f5f5f5;
+}
+
+.about-cta h2 {
+  font-size: 2rem;
+}
+
+.about-cta p {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* NEW BUTTON STYLE (more premium) */
+.cta-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background: #1a1a1a;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  transition: all 0.25s ease;
+}
+
+.cta-button:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    margin: 3rem auto;
+  }
+}
+
+/* FILTERS */
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-filters button {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #555;
+  position: relative;
+}
+
+.portfolio-filters button::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  background: #333;
+  transition: 0.3s;
+}
+
+.portfolio-filters button:hover::after {
+  width: 100%;
+}
+
+.portfolio-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+.portfolio-item {
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto; /* ✅ keeps full image */
+  object-fit: contain; /* extra safety */
+  display: block;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .portfolio-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .portfolio-grid {
+    column-count: 1;
+  }
+}
