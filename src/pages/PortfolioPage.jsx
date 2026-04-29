@@ -38,49 +38,41 @@ import p30 from '../assets/p30.jpg';
 import p31 from '../assets/p31.jpg';
 import p32 from '../assets/p32.jpg';
 
+
 const images = [
-  { src: p1,  category: 'portraits', caption: 'Femme Fatale',                   location: 'Decatur, IL' },
-  { src: p2,  category: 'portraits', caption: 'Golden hour session',            location: 'Madison, WI' },
-    { src: p20, category: 'travel',    caption: 'Cleveland Dam',                  location: 'Vancouver, Canada' },
-    { src: p21, category: 'portraits',    caption: 'Picnic',                  location: 'Decatur, IL' },
-    { src: p22, category: 'portraits',    caption: 'Blinding Lights',                  location: 'Decatur, IL' },
-    { src: p23, category: 'portraits',    caption: 'Censored',                  location: 'Decatur, IL' },
-    { src: p24, category: 'portraits',    caption: 'Pulp Fiction',                  location: 'Decaur, IL' },
-    { src: p25, category: 'portraits',    caption: 'Grass',                  location: 'Decatur, IL' },
-    { src: p26, category: 'portraits',    caption: 'Trucking',                  location: 'Decatur, IL' },
-    { src: p27, category: 'portraits',    caption: 'Barrels',                  location: 'Champaign, IL' },
-
-    { src: p29, category: 'portraits',    caption: 'Cotton Candy Clouds',                  location: 'Decaur, IL' },
-    { src: p30, category: 'portraits',    caption: 'Washing Machine',                  location: 'Decaur, IL' },
-    
-
-  { src: p3,  category: 'portraits', caption: 'Candid editorial',               location: 'Chicago, IL' },
-  
-  { src: p4,  category: 'portraits', caption: 'Scopic Satisfaction',            location: 'Madison, WI' },
-  { src: p5,  category: 'portraits', caption: 'Phonies',        location: 'Madison, WI' },
-  { src: p6,  category: 'travel',    caption: 'Yellow Tower',           location: 'Vienna, Austria' },
-  { src: p7,  category: 'travel',    caption: 'Afternoon light',            location: 'Prague, Czechia' },
-  { src: p8,  category: 'travel',    caption: 'Blossoms in DC',          location: 'Washington, D.C' },
-  { src: p9,  category: 'travel',    caption: 'Busy Street',             location: 'Tokyo, Japan' },
-      { src: p28, category: 'portraits',    caption: 'Traffic',                  location: 'Decaur, IL' },
-  { src: p10, category: 'travel',    caption: 'Tokyo Market',              location: 'Tokyo, Japan' },
-  { src: p11, category: 'travel',    caption: 'Meiji Jingu',        location: 'Tokyo, Japan' },
-    { src: p31, category: 'portraits',    caption: 'Neocity',      location: 'Chicago, IL' },
-
-  { src: p12, category: 'events',    caption: 'Feast',          location: 'Decatur, IL' },
-  { src: p13, category: 'events',    caption: 'Baby Shower',                location: 'Decaur, IL' },
-  { src: p15, category: 'events',    caption: 'Netowrking',              location: 'Madison, WI' },
-  { src: p16, category: 'events',    caption: 'Career Fair',          location: 'Madison, WI' },
-          { src: p32, category: 'portraits',    caption: 'Sisters',      location: 'Allerton, IL' },
-  { src: p17, category: 'events',    caption: "Veena's Birthday",             location: 'Chicago, IL' },
-  { src: p18, category: 'travel',    caption: 'Sunny Rooftops',                 location: 'Prague, Czechia' },
-  { src: p19, category: 'travel',    caption: 'Serene Moment',                  location: 'Prague, Czechia' },
-
-
-
-  
-
+  { src: p1,  category: 'portraits', caption: 'Femme Fatale',         alt: 'Portrait titled Femme Fatale, Decatur, IL',               location: 'Decatur, IL' },
+  { src: p2,  category: 'portraits', caption: 'Golden hour session',  alt: 'Golden hour portrait session, Madison, WI',               location: 'Madison, WI' },
+  { src: p20, category: 'travel',    caption: 'Cleveland Dam',        alt: 'Cleveland Dam landscape, Vancouver, Canada',              location: 'Vancouver, Canada' },
+  { src: p21, category: 'portraits', caption: 'Picnic',               alt: 'Outdoor picnic portrait, Decatur, IL',                   location: 'Decatur, IL' },
+  { src: p22, category: 'portraits', caption: 'Blinding Lights',      alt: 'Portrait titled Blinding Lights, Decatur, IL',           location: 'Decatur, IL' },
+  { src: p23, category: 'portraits', caption: 'Censored',             alt: 'Editorial portrait titled Censored, Decatur, IL',        location: 'Decatur, IL' },
+  { src: p24, category: 'portraits', caption: 'Pulp Fiction',         alt: 'Portrait titled Pulp Fiction, Decatur, IL',              location: 'Decatur, IL' },
+  { src: p25, category: 'portraits', caption: 'Grass',                alt: 'Portrait among grass, Decatur, IL',                     location: 'Decatur, IL' },
+  { src: p26, category: 'portraits', caption: 'Trucking',             alt: 'Portrait titled Trucking, Decatur, IL',                 location: 'Decatur, IL' },
+  { src: p27, category: 'portraits', caption: 'Barrels',              alt: 'Portrait with barrels, Champaign, IL',                  location: 'Champaign, IL' },
+  { src: p29, category: 'portraits', caption: 'Cotton Candy Clouds',  alt: 'Portrait under cotton candy clouds, Decatur, IL',       location: 'Decatur, IL' },
+  { src: p30, category: 'portraits', caption: 'Washing Machine',      alt: 'Portrait titled Washing Machine, Decatur, IL',          location: 'Decatur, IL' },
+  { src: p3,  category: 'portraits', caption: 'Tennis',               alt: 'group Tennis Portrait, Chicago, IL',                    location: 'Decatur, IL' },
+  { src: p4,  category: 'portraits', caption: 'Scopic Satisfaction',  alt: 'Portrait titled Scopic Satisfaction, Madison, WI',      location: 'Madison, WI' },
+  { src: p5,  category: 'portraits', caption: 'Phonies',              alt: 'Portrait titled Phonies, Madison, WI',                  location: 'Madison, WI' },
+  { src: p6,  category: 'travel',    caption: 'Yellow Tower',         alt: 'Yellow tower architecture, Vienna, Austria',            location: 'Vienna, Austria' },
+  { src: p7,  category: 'travel',    caption: 'Afternoon light',      alt: 'Afternoon light in Prague, Czechia',                    location: 'Prague, Czechia' },
+  { src: p8,  category: 'travel',    caption: 'Blossoms in DC',       alt: 'Cherry blossoms in Washington D.C.',                   location: 'Washington, D.C' },
+  { src: p9,  category: 'travel',    caption: 'Busy Street',          alt: 'Busy street scene in Tokyo, Japan',                    location: 'Tokyo, Japan' },
+  { src: p28, category: 'portraits', caption: 'Traffic',              alt: 'Portrait titled Traffic, Decatur, IL',                 location: 'Decatur, IL' },
+  { src: p10, category: 'travel',    caption: 'Tokyo Market',         alt: 'Tokyo market scene, Japan',                            location: 'Tokyo, Japan' },
+  { src: p11, category: 'travel',    caption: 'Meiji Jingu',          alt: 'Meiji Jingu shrine, Tokyo, Japan',                     location: 'Tokyo, Japan' },
+  { src: p31, category: 'portraits', caption: 'Neocity',              alt: 'Portrait titled Neocity, Chicago, IL',                 location: 'Chicago, IL' },
+  { src: p12, category: 'events',    caption: 'Feast',                alt: 'Event photo of a feast, Decatur, IL',                  location: 'Decatur, IL' },
+  { src: p13, category: 'events',    caption: 'Baby Shower',          alt: 'Baby shower event, Decatur, IL',                       location: 'Decatur, IL' },
+  { src: p15, category: 'events',    caption: 'Networking',           alt: 'Networking event, Madison, WI',                        location: 'Madison, WI' },
+  { src: p16, category: 'events',    caption: 'Career Fair',          alt: 'Career fair event, Madison, WI',                       location: 'Madison, WI' },
+  { src: p32, category: 'portraits', caption: 'Sisters',              alt: 'Portrait of sisters, Allerton, IL',                   location: 'Allerton, IL' },
+  { src: p17, category: 'events',    caption: "Veena's Birthday",     alt: "Veena's birthday celebration, Chicago, IL",            location: 'Chicago, IL' },
+  { src: p18, category: 'travel',    caption: 'Sunny Rooftops',       alt: 'Sunny rooftops of Prague, Czechia',                    location: 'Prague, Czechia' },
+  { src: p19, category: 'travel',    caption: 'Serene Moment',        alt: 'Serene moment captured in Prague, Czechia',            location: 'Prague, Czechia' },
 ];
+
 
 export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');

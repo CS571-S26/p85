@@ -14,7 +14,7 @@ export default function Lightbox({ img, onClose, onNext, onPrev, hasPrev, hasNex
       </button>
 
       <div className="lightbox-inner" onClick={e => e.stopPropagation()}>
-        <img src={img.src} alt={img.caption} className="lightbox-img" />
+        <img src={img.src} alt={img.alt} className="lightbox-img" />
         <div className="lightbox-meta">
           {img.caption  && <span className="lb-caption">{img.caption}</span>}
           {img.location && <span className="lb-location">{img.location}</span>}

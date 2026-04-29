@@ -58,6 +58,9 @@ export default function InquirePage() {
           background: #f7f4ef;
           font-family: 'Jost', sans-serif;
           padding: 80px 0 100px;
+
+          --gold-decorative: #a8957c;  /* borders, lines, dividers only */
+          --gold-text: #5c4520;        /* all text on light backgrounds  */
         }
 
         .inquire-eyebrow {
@@ -66,7 +69,7 @@ export default function InquirePage() {
           font-size: 11px;
           letter-spacing: 0.25em;
           text-transform: uppercase;
-          color: #a8957c;
+          color: var(--gold-text);
           margin-bottom: 12px;
         }
 
@@ -81,13 +84,13 @@ export default function InquirePage() {
 
         .inquire-title em {
           font-style: italic;
-          color: #a8957c;
+          color: var(--gold-text);
         }
 
         .inquire-divider {
           width: 48px;
           height: 1px;
-          background: #a8957c;
+          background: var(--gold-decorative);
           margin: 28px 0;
         }
 
@@ -96,7 +99,7 @@ export default function InquirePage() {
           font-weight: 300;
           font-size: 14px;
           line-height: 1.75;
-          color: #6b5e50;
+          color: #3d3028;
           max-width: 380px;
         }
 
@@ -125,7 +128,7 @@ export default function InquirePage() {
           font-size: 10px;
           letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: #a8957c;
+          color: var(--gold-text);
           margin-bottom: 8px;
           transition: color 0.2s;
         }
@@ -149,7 +152,7 @@ export default function InquirePage() {
         }
 
         .field-input:focus {
-          border-bottom-color: #a8957c;
+          border-bottom-color: var(--gold-decorative);
           box-shadow: none;
         }
 
@@ -190,14 +193,14 @@ export default function InquirePage() {
           font-size: 12px;
           font-weight: 300;
           letter-spacing: 0.08em;
-          color: #6b5e50;
+          color: #3d3028;
           cursor: pointer;
           transition: all 0.2s;
           border-radius: 0;
         }
 
         .session-pill:hover {
-          border-color: #a8957c;
+          border-color: var(--gold-decorative);
           color: #1c1712;
         }
 
@@ -225,7 +228,7 @@ export default function InquirePage() {
         }
 
         .submit-btn:hover {
-          background: #a8957c;
+          background: #5a4528;
           transform: translateY(-1px);
         }
 
@@ -240,13 +243,13 @@ export default function InquirePage() {
         .success-icon {
           width: 56px;
           height: 56px;
-          border: 1px solid #a8957c;
+          border: 1px solid var(--gold-decorative);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           margin: 0 auto 28px;
-          color: #a8957c;
+          color: var(--gold-text);
           font-size: 22px;
         }
 
@@ -262,7 +265,7 @@ export default function InquirePage() {
           font-family: 'Jost', sans-serif;
           font-weight: 300;
           font-size: 14px;
-          color: #6b5e50;
+          color: #3d3028;
           line-height: 1.7;
         }
 
@@ -270,7 +273,7 @@ export default function InquirePage() {
           background: none;
           border: none;
           padding: 0;
-          color: #a8957c;
+          color: var(--gold-text);
           font-size: 12px;
           letter-spacing: 0.15em;
           text-transform: uppercase;
@@ -306,7 +309,7 @@ export default function InquirePage() {
                 <Card.Body>
                   {submitted ? (
                     <div className="success-wrap">
-                      <div className="success-icon">✓</div>
+                      <div className="success-icon" aria-hidden="true">✓</div>
                       <h2 className="success-title">Message received</h2>
                       <p className="success-body">
                         Thank you, {formData.name.split(' ')[0]}. I'm looking forward
@@ -325,7 +328,7 @@ export default function InquirePage() {
                             <Form.Control
                               className={`field-input${errors.name?' error':''}`}
                               value={formData.name}
-                              placeholder="Jane Smith"
+                             
                               isInvalid={!!errors.name}
                               onFocus={() => setFocused('name')}
                               onBlur={() => setFocused(null)}
@@ -343,7 +346,6 @@ export default function InquirePage() {
                               type="email"
                               className={`field-input${errors.email?' error':''}`}
                               value={formData.email}
-                              placeholder="jane@email.com"
                               isInvalid={!!errors.email}
                               onFocus={() => setFocused('email')}
                               onBlur={() => setFocused(null)}
@@ -358,19 +360,20 @@ export default function InquirePage() {
 
                       <Form.Group className="field-group" controlId="formSessionType">
                         <Form.Label className="field-label">Session Type *</Form.Label>
-                        <div className="session-pills">
+                        <div className="session-pills" role="group" aria-label="Session type">
                           {SESSION_TYPES.map(t => (
                             <button
                               key={t}
                               type="button"
                               className={`session-pill${formData.sessionType===t?' selected':''}`}
+                              aria-pressed={formData.sessionType === t}
                               onClick={() => handleChange('sessionType', t)}
                             >
                               {t}
                             </button>
                           ))}
                         </div>
-                        {errors.sessionType && <Form.Text className="field-error d-block">{errors.sessionType}</Form.Text>}
+                        {errors.sessionType && <Form.Text className="field-error d-block" role="alert">{errors.sessionType}</Form.Text>}
                       </Form.Group>
 
                       <Row className="g-0">
@@ -393,7 +396,7 @@ export default function InquirePage() {
                             <Form.Control
                               className="field-input"
                               value={formData.location}
-                              placeholder="Chicago, IL"
+                              
                               onFocus={() => setFocused('location')}
                               onBlur={() => setFocused(null)}
                               onChange={e => handleChange('location', e.target.value)}
@@ -408,7 +411,6 @@ export default function InquirePage() {
                           as="textarea"
                           className={`field-input${errors.message?' error':''}`}
                           value={formData.message}
-                          placeholder="Describe the mood, setting, or story you'd love to capture…"
                           isInvalid={!!errors.message}
                           onFocus={() => setFocused('message')}
                           onBlur={() => setFocused(null)}

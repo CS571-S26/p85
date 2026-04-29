@@ -1,10 +1,9 @@
 import '../App.css';
 import hero from '../assets/hero.jpg';
 import vanImg from '../assets/van.jpg';
-import my from '../assets/my.jpg';
 import my1 from '../assets/my1.jpg';
 
-import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { Container, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function AboutPerson({ image, name, tagline, index, children }) {
@@ -16,7 +15,7 @@ function AboutPerson({ image, name, tagline, index, children }) {
       </div>
       <div className="ap-text">
         <p className="ap-eyebrow">{tagline}</p>
-        <h3 className="ap-name">{name}</h3>
+        <h2 className="ap-name">{name}</h2>
         <div className="ap-divider" />
         <div className="ap-bio">{children}</div>
       </div>
@@ -34,8 +33,9 @@ export default function About() {
           --cream: #f8f5f0;
           --warm-white: #fdfcfa;
           --ink: #191714;
-          --mid: #6b6159;
+          --mid: #4a4540;
           --gold: #b8986a;
+          --gold-text: #7a6035;
           --border: #e2dbd2;
         }
 
@@ -138,7 +138,7 @@ export default function About() {
           font-weight: 400;
           letter-spacing: 0.3em;
           text-transform: uppercase;
-          color: var(--gold);
+          color: var(--gold-text);
           margin-bottom: 10px;
         }
 
@@ -167,7 +167,6 @@ export default function About() {
           box-shadow: 0 12px 60px rgba(25,23,20,0.13);
         }
 
-        /* Second card: flip image/text order */
         .ap-card--1 {
           direction: rtl;
         }
@@ -212,7 +211,7 @@ export default function About() {
           font-weight: 400;
           letter-spacing: 0.25em;
           text-transform: uppercase;
-          color: var(--gold);
+          color: var(--gold-text);
           margin-bottom: 10px;
         }
 
@@ -251,7 +250,7 @@ export default function About() {
           border-bottom: 1px solid var(--border);
         }
 
-        .social-section h3 {
+        .social-section h2 {
           font-family: 'Cormorant Garamond', serif;
           font-weight: 300;
           font-size: 2rem;
@@ -357,7 +356,6 @@ export default function About() {
           }
 
           .ap-img-wrap { min-height: 280px; }
-
           .ap-text { padding: 36px 28px; }
 
           .about-intro-strip {
@@ -375,7 +373,7 @@ export default function About() {
 
         {/* HERO */}
         <div className="about-hero">
-          <Image src={hero} alt="About us" fluid className="about-hero-img" />
+          <Image src={hero} alt="Van and My Tran, photographers and artists" fluid className="about-hero-img" />
           <div className="hero-text-overlay">
             <p className="hero-eyebrow">Our Story</p>
             <h1 className="hero-title">
@@ -401,6 +399,7 @@ export default function About() {
 
             <AboutPerson
               image={vanImg}
+              alt="Van Tran, portrait and event photographer"
               name="Van Tran"
               tagline="Portrait & Event Photographer"
               index={0}
@@ -419,6 +418,7 @@ export default function About() {
 
             <AboutPerson
               image={my1}
+              alt="My Tran, artist and illustrator"
               name="My Tran"
               tagline="Artist & Illustrator"
               index={1}
@@ -438,7 +438,7 @@ export default function About() {
 
         {/* SOCIAL */}
         <div className="social-section">
-          <h3>Connect With Us</h3>
+          <h2>Connect With Us</h2>
           <div className="social-links-row">
             <a href="https://www.instagram.com/mvstudio.jpg/">Instagram</a>
             <a href="#">Portfolio</a>
@@ -451,9 +451,7 @@ export default function About() {
           <p className="cta-eyebrow">Work With Us</p>
           <h2 className="cta-title">Ready to get started?</h2>
           <p className="cta-sub">Let's bring your vision to life.</p>
-<Link to="/inquire" className="cta-btn">
-  Inquire Now
-</Link>
+          <Link to="/inquire" className="cta-btn">Inquire Now</Link>
         </div>
 
       </div>
